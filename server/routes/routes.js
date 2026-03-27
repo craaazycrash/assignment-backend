@@ -25,22 +25,4 @@
         }
     })
 
-    routes.put("/updating/:id", async(req,res)=>{
-        try {
-            await modelfile.findByIdAndUpdate(req.params.id, req.body, {new : true});
-            res.json("Data updated successfully....")
-        } catch (error) {
-            console.log(error);
-        }
-    })
-
-    routes.delete("/deleting/:id", async(req,res)=>{
-        try {
-            await modelfile.findByIdAndDelete(req.params.id);
-            res.json("Data deleted successfully....")
-        } catch (error) {
-            console.log(error);    
-        }
-    })
-
     module.exports = routes
